@@ -1,0 +1,48 @@
+================================================================================
+SALARY PREDICTION MODELS - DEPLOYMENT INFO
+================================================================================
+
+Training Date: 2026-03-20 01:13:59
+Dataset Size: 325 rows
+Number of Models: 6
+
+================================================================================
+MODEL PERFORMANCE SUMMARY
+================================================================================
+
+            Model        RMSE         MAE  R² Score  CV R² Mean  CV R² Std
+ Ridge Regression 7679.267103 5472.044166  0.974168    0.959472   0.013607
+    Random Forest 8170.130176 5486.921931  0.970760    0.952733   0.014791
+ Lasso Regression 8229.237837 6156.204780  0.970335    0.962834   0.012579
+Linear Regression 8264.351133 6201.565368  0.970082    0.962808   0.012502
+Gradient Boosting 8538.706119 5785.699763  0.968062    0.954516   0.013805
+          XGBoost 8858.952309 6306.504928  0.965622    0.945254   0.016115
+
+================================================================================
+BEST MODEL
+================================================================================
+Model: Ridge Regression
+R² Score: 0.9742 (97.42%)
+RMSE: $7,679.27
+MAE: $5,472.04
+
+================================================================================
+FEATURES USED
+================================================================================
+1. Age
+2. Gender
+3. Education Level
+4. Job_Title_Encoded
+5. Years of Experience
+6. Experience_Age_Ratio
+7. Education_Experience
+
+================================================================================
+USAGE INSTRUCTIONS FOR STREAMLIT
+================================================================================
+1. Load best model: joblib.load('models/best_model.pkl')
+2. Load scaler: joblib.load('models/scaler.pkl')
+3. Load feature info: joblib.load('models/feature_info.pkl')
+4. Prepare input data with same features
+5. Scale data using loaded scaler
+6. Predict using loaded model
